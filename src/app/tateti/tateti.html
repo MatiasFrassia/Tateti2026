@@ -1,0 +1,20 @@
+<p>tateti works!</p>
+<div class="container">
+  <h1>Ta-Te-Ti</h1>
+
+  <div class="board">
+    <div 
+      class="cell" 
+      *ngFor="let cell of board; let i = index"
+      (click)="play(i)">
+      {{ cell }}
+    </div>
+  </div>
+
+  <h2 *ngIf="!winner">Turno: {{ currentPlayer }}</h2>
+  <h2 *ngIf="winner">
+    {{ winner === 'Empate' ? 'Empate 🤝' : 'Ganador: ' + winner }}
+  </h2>
+
+  <button (click)="reset()">Reiniciar</button>
+</div>
